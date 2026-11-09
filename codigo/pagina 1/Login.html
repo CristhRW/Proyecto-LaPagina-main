@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./Login.css">
+</head>
+<body>
+    <header class="navbar">
+        <h2>Mi Pagina</h2>
+        <div class="contenedor-usuario">
+            <!-- Botón del usuario -->
+            <button id="userButton" class="usuario-boton" aria-label="Menu de Usuario" aria-expanded="false">
+                👤
+            </button>
+            <!-- Menú desplegable -->
+            <div id="userMenu" class="user-menu hidden">
+                <button id="openLogin">Iniciar Sesión</button>
+                <button id="openRegister">Crear Cuenta</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Modal de registro -->
+    <div id="registerModal" class="modal hidden">
+        <div class="modal-content">
+            <button class="close-button" data-close="registerModal" aria-label="Cerrar">&times;</button>
+            <h2>Crear Cuenta</h2>
+            <p>Completa tus datos para registrarte.</p>
+            <form id="registerForm">
+                <label for="RegistroNombre">Nombre y Apellido:</label>
+                <input type="text" id="RegistroNombre" placeholder="Nombre y Apellido" required>
+                <label for="RegistroEmail">Correo Electrónico:</label>
+                <input type="email" id="RegistroEmail" placeholder="Ejemplo@Correo.com" required>
+                <label for="RegistroPassword">Contraseña:</label>
+                <input type="password" id="RegistroPassword" placeholder="Mínimo 8 Caracteres" minlength="8" required>
+                <label for="RegistroPasswordConfirm">Repetir Contraseña:</label>
+                <input type="password" id="RegistroPasswordConfirm" placeholder="Confirma tu contraseña" required>
+                <button type="submit" class="submit-button">Registrarse</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal de inicio de sesión -->
+    <div id="loginModal" class="modal hidden">
+        <div class="modal-content">
+            <button class="close-button" data-close="loginModal" aria-label="Cerrar">&times;</button>
+            <h2>Iniciar Sesión</h2>
+            <p>Ingresa a tu cuenta.</p>
+            <form id="loginForm">
+                <label for="InicioEmail">Correo Electrónico:</label>
+                <input type="email" id="InicioEmail" placeholder="Correo@Ejemplo.com" required>
+                <label for="InicioPassword">Contraseña:</label>
+                <input type="password" id="InicioPassword" placeholder="Ingresa tu contraseña" required>
+                <button type="submit" class="submit-button">Iniciar Sesión</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="./Login.js"></script>
+</body>
+</html>

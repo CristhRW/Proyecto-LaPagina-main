@@ -1,0 +1,79 @@
+:root {
+    --primary-violet: #7c5cb9;
+    --primary-hover: #6949a8;
+    --bg-violet-light: #f4eefb;
+    --bg-card-sand: #f6f1ec;
+    --text-dark: #2b2535;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: #fdfcfd;
+    color: var(--text-dark);
+}
+
+.font-playfair { 
+    font-family: 'Playfair Display', serif; 
+}
+
+.brand-title { 
+    font-size: 1.5rem; 
+    font-weight: 600; 
+    color: var(--primary-violet); 
+}
+
+.bg-violet { 
+    background-color: var(--primary-violet) !important; 
+}
+
+.text-violet { 
+    color: var(--primary-violet) !important; 
+}
+
+.btn-violet {
+    background-color: var(--primary-violet);
+    color: white;
+    border: none;
+    transition: all 0.2s;
+}
+
+.btn-violet:hover { 
+    background-color: var(--primary-hover); 
+    color: white; 
+}
+
+.btn-outline-violet {
+    border: 1px solid var(--primary-violet);
+    color: var(--primary-violet);
+    background: transparent;
+}
+
+.btn-outline-violet:hover {
+    background-color: var(--bg-violet-light);
+    color: var(--primary-violet);
+}
+
+.product-card {
+    border: none;
+    border-radius: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    transition: transform 0.2s;
+}
+
+.product-card:hover { 
+    transform: translateY(-3px); 
+}
+
+.card-img-wrapper {
+    background-color: var(--bg-card-sand);
+    border-radius: 16px;
+    overflow: hidden;
+    margin: 8px;
+}
+
+.product-img { 
+    height: 200px; 
+    object-fit: cover; 
+    width: 100%; 
+}

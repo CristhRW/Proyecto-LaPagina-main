@@ -1,0 +1,494 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #f7f5fb; /* Blanco suave con tono lila */
+  color: #3d344d;
+  padding: 20px;
+}
+
+/* Encabezado */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 30px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(186, 168, 224, 0.15);
+  margin-bottom: 30px;
+  border: 1px solid #ebdffc;
+}
+
+.navbar h1 {
+  font-size: 1.5rem;
+  color: #7b52ab; /* Violeta pastel principal */
+  font-weight: 700;
+}
+
+.cart-icon-btn {
+  position: relative;
+  background: #b197fc; /* Violeta pastel claro */
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-weight: bold;
+  box-shadow: 0 2px 8px rgba(177, 151, 252, 0.4);
+}
+
+.cart-badge {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background: #e5dbff;
+  color: #5f3dc4;
+  border-radius: 50%;
+  padding: 2px 8px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  border: 2px solid #ffffff;
+}
+
+/* Layout */
+.main-layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .main-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.products-section h2 {
+  margin-bottom: 18px;
+  color: #5c447a;
+  font-size: 1.3rem;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+/* Tarjeta de Producto */
+.product-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 16px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(160, 130, 210, 0.08);
+  border: 1px solid #f0e6ff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.product-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(160, 130, 210, 0.18);
+}
+
+.product-card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+
+.product-card h3 {
+  font-size: 1.05rem;
+  margin-bottom: 6px;
+  color: #3b2c52;
+}
+
+.product-card .price {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #7209b7;
+  margin-bottom: 12px;
+}
+
+.add-btn {
+  background: #9d4edd;
+  color: #ffffff;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.add-btn:hover {
+  background: #7b2cbf;
+}
+
+/* Panel del Carrito */
+.cart-panel {
+  background: #ffffff;
+  padding: 22px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(160, 130, 210, 0.08);
+  border: 1px solid #f0e6ff;
+  height: fit-content;
+}
+
+.cart-panel h2 {
+  margin-bottom: 15px;
+  font-size: 1.25rem;
+  color: #5c447a;
+  border-bottom: 2px solid #f3ebfc;
+  padding-bottom: 10px;
+}
+
+.cart-items {
+  list-style: none;
+  margin-bottom: 15px;
+  max-height: 350px;
+  overflow-y: auto;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #f5edfe;
+}
+
+.cart-item-info {
+  flex-grow: 1;
+  margin-right: 10px;
+}
+
+.cart-item-title {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #3d344d;
+}
+
+.cart-item-price {
+  font-size: 0.85rem;
+  color: #8a7b9d;
+  margin-top: 2px;
+}
+
+.qty-btn {
+  background: #f3ebfc;
+  color: #6a040f;
+  border: none;
+  padding: 4px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  color: #7b52ab;
+  transition: background 0.2s;
+}
+
+.qty-btn:hover {
+  background: #e2d1f9;
+}
+
+.remove-btn {
+  background: #ff85a1;
+  color: white;
+  border: none;
+  padding: 4px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  margin-left: 8px;
+  transition: background 0.2s;
+}
+
+.remove-btn:hover {
+  background: #ff5277;
+}
+
+.cart-total {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #3b2c52;
+  margin-top: 15px;
+  padding-top: 12px;
+  border-top: 2px solid #f3ebfc;
+}
+
+.empty-msg {
+  color: #a395b8;
+  font-style: italic;
+  text-align: center;
+  margin: 25px 0;
+}
+
+/* Botón Checkout WhatsApp */
+.checkout-btn {
+  width: 100%;
+  background-color: #7b2cbf;
+  color: #ffffff;
+  border: none;
+  padding: 14px;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 15px;
+  box-shadow: 0 4px 10px rgba(123, 44, 191, 0.25);
+  transition: background 0.2s, transform 0.1s;
+}
+
+.checkout-btn:hover {
+  background-color: #5a189a;
+}
+
+.checkout-btn:active {
+  transform: scale(0.98);
+}
+
+.checkout-btn:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+/* --- PAGINA SOBRE NOSOTROS --- */
+
+.about-hero {
+  background: linear-gradient(135deg, #fdfbfd 0%, #f4e8ff 100%);
+  padding: 110px 20px 40px;
+  text-align: center;
+  border-bottom: 1px solid #ebdffc;
+}
+
+.about-hero h1 {
+  font-size: 2.5rem;
+  color: #5a189a;
+  margin: 15px 0 10px;
+}
+
+.about-hero p {
+  font-size: 1.1rem;
+  color: #6c5b7b;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.about-main-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 50px 20px;
+}
+
+/* Grilla de Historia + Foto */
+.about-story-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 40px;
+  align-items: center;
+  margin-bottom: 70px;
+}
+
+.story-image-card {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 12px 28px rgba(123, 44, 191, 0.15);
+}
+
+.about-img {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.story-image-card:hover .about-img {
+  transform: scale(1.03);
+}
+
+.image-caption {
+  position: absolute;
+  bottom: 0;
+  background: rgba(59, 44, 82, 0.85);
+  color: #ffffff;
+  width: 100%;
+  padding: 12px 15px;
+  font-size: 0.88rem;
+  text-align: center;
+  backdrop-filter: blur(4px);
+}
+
+.story-content h2 {
+  font-size: 1.9rem;
+  color: #3b2c52;
+  margin-bottom: 20px;
+}
+
+.story-content p {
+  font-size: 1.05rem;
+  color: #554466;
+  line-height: 1.7;
+  margin-bottom: 15px;
+}
+
+/* Grupo de botones */
+.action-buttons-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.primary-btn {
+  background: #7b2cbf;
+  color: #ffffff;
+  padding: 12px 24px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 4px 14px rgba(123, 44, 191, 0.3);
+  transition: background 0.2s, transform 0.2s;
+}
+
+.primary-btn:hover {
+  background: #5a189a;
+  transform: translateY(-2px);
+}
+
+.primary-btn-lg {
+  background: #7b2cbf;
+  color: #ffffff;
+  padding: 16px 36px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+  display: inline-block;
+  box-shadow: 0 6px 18px rgba(123, 44, 191, 0.3);
+  transition: background 0.2s, transform 0.2s;
+}
+
+.primary-btn-lg:hover {
+  background: #5a189a;
+  transform: translateY(-3px);
+}
+
+.whatsapp-btn {
+  background: #25d366;
+  color: #ffffff;
+  padding: 12px 24px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.3);
+  transition: background 0.2s, transform 0.2s;
+}
+
+.whatsapp-btn:hover {
+  background: #1eb857;
+  transform: translateY(-2px);
+}
+
+.nav-btn-secondary {
+  border: 2px solid #7b2cbf;
+  color: #7b2cbf;
+  padding: 8px 18px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.nav-btn-secondary:hover {
+  background: #7b2cbf;
+  color: #ffffff;
+}
+
+/* Tarjetas de Valores */
+.values-section {
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.section-title {
+  font-size: 1.8rem;
+  color: #3b2c52;
+  margin-bottom: 35px;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+.value-card {
+  background: #ffffff;
+  border: 1px solid #f0e6ff;
+  border-radius: 18px;
+  padding: 30px 20px;
+  box-shadow: 0 6px 18px rgba(160, 130, 210, 0.08);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.value-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(160, 130, 210, 0.18);
+}
+
+.value-icon {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.value-card h3 {
+  color: #5a189a;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.value-card p {
+  color: #7a6b8d;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Banner de llamado a la acción final */
+.cta-banner {
+  background: linear-gradient(135deg, #f4e8ff 0%, #ebdffc 100%);
+  border-radius: 24px;
+  padding: 45px 25px;
+  text-align: center;
+}
+
+.cta-banner h2 {
+  color: #3b2c52;
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.cta-banner p {
+  color: #6c5b7b;
+  font-size: 1.05rem;
+  margin-bottom: 25px;
+}
+
+.simple-footer {
+  text-align: center;
+  padding: 25px 20px;
+  color: #8a7b9d;
+  font-size: 0.9rem;
+  border-top: 1px solid #f0e6ff;
+}

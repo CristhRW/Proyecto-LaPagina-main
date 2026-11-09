@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Modal Interactivo</title>
+    <!-- Vinculamos los estilos -->
+    <link rel="stylesheet" href="./login2.css">
+</head>
+<body>
+
+    <!-- Botón de apertura -->
+    <button class="btn-login-trigger" id="openModalBtn">Login</button>
+
+    <!-- Estructura del Modal -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-content">
+            <span class="close-btn" id="closeModalBtn">&times;</span>
+
+            <!-- FORMULARIO DE LOGIN -->
+            <div id="loginFormContainer" class="form-container">
+                <h2>Iniciar Sesión</h2>
+                <form id="loginForm">
+                    <div class="input-group">
+                        <label for="login-email">Correo Electrónico</label>
+                        <input type="email" id="login-email" placeholder="ejemplo@correo.com" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="login-password">Contraseña</label>
+                        <input type="password" id="login-password" placeholder="Tu contraseña" required>
+                    </div>
+                    <button type="submit" class="btn-submit">Ingresar</button>
+                </form>
+                <p class="switch-text">
+                    ¿No tenés una cuenta? <a href="#" id="toRegisterLink">Crear cuenta</a>
+                </p>
+            </div>
+
+            <!-- FORMULARIO DE REGISTRO (Oculto al inicio) -->
+            <div id="registerFormContainer" class="form-container hidden">
+                <h2>Crear Cuenta</h2>
+                <form id="registerForm">
+                    <div class="input-group">
+                        <label for="reg-username">Nombre de Usuario</label>
+                        <input type="text" id="reg-username" placeholder="Tu nombre" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="reg-email">Correo Electrónico</label>
+                        <input type="email" id="reg-email" placeholder="ejemplo@correo.com" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="reg-password">Contraseña</label>
+                        <input type="password" id="reg-password" placeholder="Crea una contraseña" required>
+                    </div>
+                    <button type="submit" class="btn-submit">Registrarse</button>
+                </form>
+                <p class="switch-text">
+                    ¿Ya tenés cuenta? <a href="#" id="toLoginLink">Iniciá sesión</a>
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Vinculamos la lógica de JS -->
+    <script src="./login2.js"></script>
+</body>
+</html>
